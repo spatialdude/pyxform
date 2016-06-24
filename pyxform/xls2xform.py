@@ -78,7 +78,7 @@ def main_cli():
         except Exception as e:
             # Catch the exception by default.
             response['code'] = 999
-            response['message'] = str(e)
+            response['message'] = e.args[0].encode('utf-8')
 
         print json.dumps(response)
     else:
